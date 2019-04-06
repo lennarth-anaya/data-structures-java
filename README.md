@@ -8,6 +8,8 @@ Data structures examples in Java
 Make sure you have a folder where dependencies are downloaded only once. This is worth even for other Java projects.
 
 ```
+git clone https://github.com/lennarth-anaya/data-structures-java.git
+cd data-structures-java
 mkdir ../maven-repo
 ```
 
