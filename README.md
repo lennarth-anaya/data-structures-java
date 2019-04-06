@@ -22,15 +22,7 @@ sudo docker run \
 
 # Run Tests
 
-Rather than having a standalone application showcasing how these data structureswork, several planned Unit tests are given to demonstrate they work as expected, so you would have to understand such test cases since their execution just will give you a successful or failure response status.
-
-
-```
-sudo docker run \
-    -v "$PWD":/project -w /project \
-    -v "$PWD/../maven-repo":/root/.m2 \
-    openjdk ./mvnw exec:java -Dexec.mainClass="com.example.bank.App"
-```
+Rather than having a standalone application showcasing how these data structureswork, several planned Unit tests are given to demonstrate they work as expected, so you would have to understand such test cases since their execution just will give you a successful or failure response status.```
 
 ## Run all unit tests
 
