@@ -1,7 +1,7 @@
 
 # data-structures-java
 
-Data structures examples in Java
+Data structures examples in Java. THey are coded in a way that it maximizes the principle of separations of concerns so students can understand every operation in a neatr way than when having all the operations in a single structure java class. The principle of encapsulation dictates we should use a facade to operate all those operations in a coherent unbreakable way. For instance, the use of such facade will guarantee an AVL Tree is not broken by using non-avl operations.
 
 # Setup
 
