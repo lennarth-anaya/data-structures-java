@@ -8,6 +8,11 @@ import org.datastr.tree.traverser.PostOrderTraverser;
 import org.datastr.tree.traverser.PreOrderTreeTraverser;
 import org.junit.Test;
 
+/**
+ * 
+ * @author Lennarth Anaya
+ *
+ */
 public class BSTreeTraversersTest extends BSTreeTests {
 	@Test
 	public void byLevelTraverse() {

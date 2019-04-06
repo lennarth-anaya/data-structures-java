@@ -2,6 +2,11 @@ package org.datastr.tree;
 
 import org.junit.Before;
 
+/**
+ * 
+ * @author Lennarth Anaya
+ *
+ */
 public class BSTreeTests {
 	private BinaryTreeNode<String> root;
 	

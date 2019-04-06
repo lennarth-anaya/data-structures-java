@@ -5,6 +5,12 @@ import java.util.ArrayDeque;
 import org.datastr.tree.BinaryTreeNode;
 import org.datastr.visitor.DataVisitor;
 
+/**
+ * 
+ * @author Lennarth Anaya
+ *
+ * @param <V> Elements type the Tree can contain.
+ */
 public class LevelOrderTreeTraverser<V extends Comparable<V>>
 	implements TreeTraverser<V>
 {

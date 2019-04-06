@@ -2,6 +2,12 @@ package org.datastr.tree.avl;
 
 import org.datastr.tree.BinaryTreeNode;
 
+/**
+ * 
+ * @author Lennarth Anaya
+ *
+ * @param <V> Elements type the Tree can contain.
+ */
 public class BinaryTreeRotator<V extends Comparable<V>> {
 	public BinaryTreeNode<V> rotateLeft(BinaryTreeNode<V> node) {
 		BinaryTreeNode<V> newRoot;

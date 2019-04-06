@@ -6,6 +6,11 @@ import static org.junit.Assert.assertNull;
 import org.datastr.tree.avl.BinaryTreeRotator;
 import org.junit.Test;
 
+/**
+ * 
+ * @author Lennarth Anaya
+ *
+ */
 public class AvlTreeRotationsTest extends BSTreeTests {
 	@Test
 	public void leftRotationHappyPath() {

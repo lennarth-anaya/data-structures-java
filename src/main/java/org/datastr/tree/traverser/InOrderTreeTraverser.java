@@ -3,6 +3,12 @@ package org.datastr.tree.traverser;
 import org.datastr.tree.BinaryTreeNode;
 import org.datastr.visitor.DataVisitor;
 
+/**
+ * 
+ * @author Lennarth Anaya
+ *
+ * @param <V> Elements type the Tree can contain.
+ */
 public class InOrderTreeTraverser<V extends Comparable<V>>
 	implements TreeTraverser<V>
 {

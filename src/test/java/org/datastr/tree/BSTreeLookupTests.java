@@ -6,6 +6,11 @@ import org.datastr.tree.lookup.MaxNodeTreeLookup;
 import org.datastr.tree.lookup.MinNodeTreeLookup;
 import org.junit.Test;
 
+/**
+ * 
+ * @author Lennarth Anaya
+ *
+ */
 public class BSTreeLookupTests extends BSTreeTests {
 	@Test
 	public void maxTraverse() {

@@ -4,6 +4,12 @@ import org.datastr.tree.BinaryTreeNode;
 import org.datastr.tree.traverser.TreeTraverser;
 import org.datastr.visitor.DataVisitor;
 
+/**
+ * 
+ * @author Lennarth Anaya
+ *
+ * @param <V> Elements type the Tree can contain.
+ */
 public class MaxNodeTreeLookup<V extends Comparable<V>>
 	implements TreeTraverser<V>
 {
