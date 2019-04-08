@@ -1,4 +1,4 @@
-package org.datastr.tree.avl;
+package org.datastr.tree.avl.nodemgt;
 
 import org.datastr.tree.BinaryTreeNode;
 
@@ -8,9 +8,9 @@ import org.datastr.tree.BinaryTreeNode;
  *
  * @param <V> Elements type the Tree can contain.
  */
-public class BinaryTreeRotator<V extends Comparable<V>> {
-	public BinaryTreeNode<V> rotateLeft(BinaryTreeNode<V> node) {
-		BinaryTreeNode<V> newRoot;
+public class AvlTreeRotator<V extends Comparable<V>> {
+	public <N extends BinaryTreeNode<V>> N rotateLeft(N node) {
+		N newRoot;
 		if (node == null) {
 			newRoot = null;
 		} else if (node.getRight() == null) {
@@ -24,8 +24,8 @@ public class BinaryTreeRotator<V extends Comparable<V>> {
 		return newRoot;
 	}
 	
-	public BinaryTreeNode<V> rotateRight(BinaryTreeNode<V> node) {
-		BinaryTreeNode<V> newRoot;
+	public <N extends BinaryTreeNode<V>> N rotateRight(N node) {
+		N newRoot;
 		if (node == null) {
 			newRoot = null;
 		} else if (node.getLeft() == null) {

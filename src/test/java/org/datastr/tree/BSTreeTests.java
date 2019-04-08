@@ -33,21 +33,21 @@ public class BSTreeTests {
 	 */
 	@Before
 	public void treeSetup() {
-		root = new BinaryTreeNode<>("F");
+		root = new BinaryTreeNodeSimple<>("F");
 		
-		root.setLeft(new BinaryTreeNode<String>("D"));
+		root.setLeft(new BinaryTreeNodeSimple<String>("D"));
 		
-		root.getLeft().setLeft(new BinaryTreeNode<String>("B"));
-		root.getLeft().setRight(new BinaryTreeNode<String>("E"));
+		root.getLeft().setLeft(new BinaryTreeNodeSimple<String>("B"));
+		root.getLeft().setRight(new BinaryTreeNodeSimple<String>("E"));
 		
-		root.getLeft().getLeft().setLeft(new BinaryTreeNode<String>("A"));
-		root.getLeft().getLeft().setRight(new BinaryTreeNode<String>("C"));
+		root.getLeft().getLeft().setLeft(new BinaryTreeNodeSimple<String>("A"));
+		root.getLeft().getLeft().setRight(new BinaryTreeNodeSimple<String>("C"));
 		
-		root.setRight(new BinaryTreeNode<String>("J"));
-		root.getRight().setLeft(new BinaryTreeNode<String>("G"));
-		root.getRight().getLeft().setRight(new BinaryTreeNode<String>("I"));
-		root.getRight().getLeft().getRight().setLeft(new BinaryTreeNode<String>("H"));
-		root.getRight().setRight(new BinaryTreeNode<String>("K"));
+		root.setRight(new BinaryTreeNodeSimple<String>("J"));
+		root.getRight().setLeft(new BinaryTreeNodeSimple<String>("G"));
+		root.getRight().getLeft().setRight(new BinaryTreeNodeSimple<String>("I"));
+		root.getRight().getLeft().getRight().setLeft(new BinaryTreeNodeSimple<String>("H"));
+		root.getRight().setRight(new BinaryTreeNodeSimple<String>("K"));
 	}
 
 }

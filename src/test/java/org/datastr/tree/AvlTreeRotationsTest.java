@@ -3,7 +3,7 @@ package org.datastr.tree;
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertNull;
 
-import org.datastr.tree.avl.BinaryTreeRotator;
+import org.datastr.tree.avl.nodemgt.AvlTreeRotator;
 import org.junit.Test;
 
 /**
@@ -14,7 +14,7 @@ import org.junit.Test;
 public class AvlTreeRotationsTest extends BSTreeTests {
 	@Test
 	public void leftRotationHappyPath() {
-		BinaryTreeRotator<String> rotator = new BinaryTreeRotator<>();
+		AvlTreeRotator<String> rotator = new AvlTreeRotator<>();
 		
 		BinaryTreeNode<String> root = getTreeRoot();
 		
@@ -30,7 +30,7 @@ public class AvlTreeRotationsTest extends BSTreeTests {
 	
 	@Test
 	public void rotationNull() {
-		BinaryTreeRotator<String> rotator = new BinaryTreeRotator<>();
+		AvlTreeRotator<String> rotator = new AvlTreeRotator<>();
 		BinaryTreeNode<String> rotated = rotator.rotateLeft(null);
 		assertNull(rotated);
 		
@@ -40,7 +40,7 @@ public class AvlTreeRotationsTest extends BSTreeTests {
 
 	@Test
 	public void leftRotationPenultimateNode() {
-		BinaryTreeRotator<String> rotator = new BinaryTreeRotator<>();
+		AvlTreeRotator<String> rotator = new AvlTreeRotator<>();
 		
 		BinaryTreeNode<String> root = getTreeRoot();
 		
@@ -53,7 +53,7 @@ public class AvlTreeRotationsTest extends BSTreeTests {
 	
 	@Test
 	public void leftRotationNoRotation() {
-		BinaryTreeRotator<String> rotator = new BinaryTreeRotator<>();
+		AvlTreeRotator<String> rotator = new AvlTreeRotator<>();
 		
 		BinaryTreeNode<String> root = getTreeRoot();
 		
@@ -66,7 +66,7 @@ public class AvlTreeRotationsTest extends BSTreeTests {
 	
 	@Test
 	public void leftRotationLeaf() {
-		BinaryTreeRotator<String> rotator = new BinaryTreeRotator<>();
+		AvlTreeRotator<String> rotator = new AvlTreeRotator<>();
 		
 		BinaryTreeNode<String> root = getTreeRoot();
 		
@@ -79,7 +79,7 @@ public class AvlTreeRotationsTest extends BSTreeTests {
 	
 	@Test
 	public void rightRotationHappyPath() {
-		BinaryTreeRotator<String> rotator = new BinaryTreeRotator<>();
+		AvlTreeRotator<String> rotator = new AvlTreeRotator<>();
 		
 		BinaryTreeNode<String> root = getTreeRoot();
 		
@@ -95,7 +95,7 @@ public class AvlTreeRotationsTest extends BSTreeTests {
 	
 	@Test
 	public void rightRotationPenultimateNode() {
-		BinaryTreeRotator<String> rotator = new BinaryTreeRotator<>();
+		AvlTreeRotator<String> rotator = new AvlTreeRotator<>();
 		
 		BinaryTreeNode<String> root = getTreeRoot();
 		
@@ -108,7 +108,7 @@ public class AvlTreeRotationsTest extends BSTreeTests {
 	
 	@Test
 	public void rightRotationNoRotation() {
-		BinaryTreeRotator<String> rotator = new BinaryTreeRotator<>();
+		AvlTreeRotator<String> rotator = new AvlTreeRotator<>();
 		
 		BinaryTreeNode<String> root = getTreeRoot();
 		
@@ -121,7 +121,7 @@ public class AvlTreeRotationsTest extends BSTreeTests {
 	
 	@Test
 	public void rightRotationLeaf() {
-		BinaryTreeRotator<String> rotator = new BinaryTreeRotator<>();
+		AvlTreeRotator<String> rotator = new AvlTreeRotator<>();
 		
 		BinaryTreeNode<String> root = getTreeRoot();
 		
