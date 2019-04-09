@@ -33,29 +33,25 @@ public class BinaryTreeNodeInserter<V extends Comparable<V>>
      * have on every single recursion.
      */
     protected <N extends BinaryTreeNode<V>> N recursiveInsert(N ref, V value) {
-        N resultSubRoot;
-        
         if (value.compareTo(ref.getValue()) < 0) {
             if (ref.getLeft() == null) {
                 // we found its position
                 ref.setLeft(nodeCreator.createNewNode(value));
-                resultSubRoot = ref;
             } else {
                 // keep looking on the left
-                resultSubRoot = recursiveInsert(ref.getLeft(), value);
+                ref.setLeft(recursiveInsert(ref.getLeft(), value));
             }
         } else {
             if (ref.getRight() == null) {
                 // we found its position
                 ref.setRight(nodeCreator.createNewNode(value));
-                resultSubRoot = ref;
             } else {
                 // keep looking on the right
-                resultSubRoot = recursiveInsert(ref.getRight(), value);
+                ref.setRight(recursiveInsert(ref.getRight(), value));
             }
         }
         
-        return resultSubRoot;
+        return ref;
     }
 
 }

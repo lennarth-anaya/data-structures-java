@@ -14,7 +14,7 @@ public class MinNodeTreeLookup<V extends Comparable<V>>
 	implements TreeTraverser<V>
 {
 	@Override
-	public void traverse(BinaryTreeNode<V> node, DataVisitor<V> visitor) {
+	public <N extends BinaryTreeNode<V>> void traverse(N node, DataVisitor<N> visitor) {
 		if (node.getLeft() != null) {
 			traverse(node.getLeft(), visitor);
 		} else {

@@ -2,6 +2,13 @@ package org.datastr.tree.avl.nodemgt;
 
 import org.datastr.tree.avl.AvlTreeNode;
 
+/**
+ * @author Lennarth Anaya
+ *
+ * This class handles AVL tree nodes balancing by coordinating nodes rotations
+ * with Rotator. Rotator is agnostic of nodes' heights, so that is also handled
+ * by this balancer.
+ */
 public class AvlSubtreeBalancer<V extends Comparable<V>> {
     // avoiding IoC to simplify and focus on algorithm
     private AvlTreeRotator<V> rotator = new AvlTreeRotator<>();
@@ -14,7 +21,8 @@ public class AvlSubtreeBalancer<V extends Comparable<V>> {
         AvlTreeNode<V> right = ref.getRight();
         
         AvlTreeImbalance imbalance = calculator.calculateImbalance(ref);
-        
+       
+
         switch(imbalance) {
         case LEFT_UNBALANCED:
             if (value.compareTo(left.getValue()) < 0) {
@@ -25,7 +33,7 @@ public class AvlSubtreeBalancer<V extends Comparable<V>> {
             
             break;
         case RIGHT_UNBALANCED:
-            if (value.compareTo(left.getValue()) > 0) {
+            if (value.compareTo(right.getValue()) > 0) {
                 balancedRoot = balanceDoubleRightLeaves(ref);
             } else {
                 balancedRoot = balanceRightWithLeftLeaf(ref);
@@ -43,7 +51,11 @@ public class AvlSubtreeBalancer<V extends Comparable<V>> {
         AvlTreeNode<V> rotatedNewSubRoot = rotator.rotateRight(node.getRight());
         node.setRight(rotatedNewSubRoot);
         
-        // rightRotTmp concides with last rotation root, no need to reassign it
+	// upate height of both involved nodes (order matters)
+        calculator.updateHeight(rotatedNewSubRoot.getRight());
+        calculator.updateHeight(rotatedNewSubRoot);
+
+        // rotated root concides with last rotation root, no need to reassign it
         rotator.rotateLeft(node);
         
         // upate height of both involved nodes
@@ -64,10 +76,14 @@ public class AvlSubtreeBalancer<V extends Comparable<V>> {
     }
 
     private AvlTreeNode<V> balanceLeftWithRightLeaf(AvlTreeNode<V> node) {
-        AvlTreeNode<V> rotatedNewSubRoot = rotator.rotateLeft(node.getLeft());
-        
+        AvlTreeNode<V> rotatedNewSubRoot = rotator.rotateLeft(node.getLeft()); 
         node.setLeft(rotatedNewSubRoot);
-        rotator.rotateRight(node);
+        
+	// upate height of both involved nodes (order matters)
+        calculator.updateHeight(rotatedNewSubRoot.getLeft());
+        calculator.updateHeight(rotatedNewSubRoot);
+
+       	rotator.rotateRight(node);
         
         // upate height of both involved nodes
         calculator.updateHeight(node);

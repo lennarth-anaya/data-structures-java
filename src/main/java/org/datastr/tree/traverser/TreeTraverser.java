@@ -11,5 +11,5 @@ import org.datastr.visitor.DataVisitor;
  */
 @FunctionalInterface
 public interface TreeTraverser<V extends Comparable<V>> {
-	void traverse(BinaryTreeNode<V> treeNode, DataVisitor<V> visitor);
+	<N extends BinaryTreeNode<V>> void traverse(N treeNode, DataVisitor<N> visitor);
 }

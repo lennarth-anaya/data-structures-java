@@ -4,6 +4,7 @@ import org.datastr.tree.BinaryTreeNode;
 import org.datastr.tree.avl.AvlTreeNode;
 import org.datastr.tree.nodemgt.BinaryTreeNodeInserter;
 
+
 /**
  * @author Lennarth Anaya
  *
@@ -33,14 +34,15 @@ class AvlTreeNodeInserter<V extends Comparable<V>>
         N node, V value
     ) {
         AvlTreeNode<V> ref = (AvlTreeNode<V>) node;
-        AvlTreeNode<V> resultSubRoot = super.recursiveInsert(ref, value);
+
+        ref = super.recursiveInsert(ref, value);
+
+        calculator.updateHeight(ref);
         
-        calculator.updateHeight(resultSubRoot);
-        
-        resultSubRoot = balancer.balance(resultSubRoot, value);
-        
+        ref = balancer.balance(ref, value);
+       
         // dirty Java's Generics:
-        return (N) resultSubRoot;
+        return (N) ref;
     }
     
 }

@@ -16,13 +16,13 @@ public class LevelOrderTreeTraverser<V extends Comparable<V>>
 {
 
 	@Override
-	public void traverse(BinaryTreeNode<V> treeNode, DataVisitor<V> visitor) {
-		ArrayDeque<BinaryTreeNode<V>> nodesToVisit = new ArrayDeque<>();
+	public <N extends BinaryTreeNode<V>> void traverse(N treeNode, DataVisitor<N> visitor) {
+		ArrayDeque<N> nodesToVisit = new ArrayDeque<>();
 		traverseByLevel(treeNode, visitor, nodesToVisit);
 	}
 	
-	private void traverseByLevel(BinaryTreeNode<V> node,
-		DataVisitor<V> visitor, ArrayDeque<BinaryTreeNode<V>> nodesToVisit)
+	private <N extends BinaryTreeNode<V>> void traverseByLevel(N node,
+		DataVisitor<N> visitor, ArrayDeque<N> nodesToVisit)
 	{
 		visitor.visited(node);
 		
@@ -37,10 +37,10 @@ public class LevelOrderTreeTraverser<V extends Comparable<V>>
 		traverseUnvisited(nodesToVisit, visitor);
 	}
 
-	private void traverseUnvisited(ArrayDeque<BinaryTreeNode<V>> nodesToVisit,
-		DataVisitor<V> visitor)
+	private <N extends BinaryTreeNode<V>> void traverseUnvisited(ArrayDeque<N> nodesToVisit,
+		DataVisitor<N> visitor)
 	{
-		for(BinaryTreeNode<V> curNode = nodesToVisit.poll();
+		for(N curNode = nodesToVisit.poll();
 			curNode != null;
 			curNode = nodesToVisit.poll()
 		) {
