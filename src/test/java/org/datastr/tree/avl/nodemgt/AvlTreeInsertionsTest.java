@@ -147,7 +147,6 @@ public class AvlTreeInsertionsTest {
         //    check the whole final tree
         strBuilder.setLength(0);
         traverser.traverse(root, node -> strBuilder.append(node.getValue() + ", "));
-        System.out.println("FINAL DEBUG " + strBuilder.toString());
         assertEquals("30, 13, 11, 10, 20, 15, 14, 25, 70, 50, 35, 65, 66, 85, 75, 90, 91, ", strBuilder.toString());
     }
 
