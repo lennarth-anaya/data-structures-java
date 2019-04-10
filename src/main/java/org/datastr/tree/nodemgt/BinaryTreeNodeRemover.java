@@ -30,6 +30,10 @@ public class BinaryTreeNodeRemover<V extends Comparable<V>>
      * have on every single recursion.
      */
     protected <N extends BinaryTreeNode<V>> N recursiveRemove(N node, V value) {
+	if (node == null) {
+            return node;
+	}
+
 	final ThreadLocal<N> replacementNode = new ThreadLocal<>();
         int valueComparison = value.compareTo(node.getValue());
 
@@ -55,12 +59,6 @@ public class BinaryTreeNodeRemover<V extends Comparable<V>>
                 // replacementNode is now diplicate, let's remove reference from previous position
                 replacementNode.get().setLeft(updatedLeft);
                
-                System.out.println("DEBUG b " + replacementNode.get().getValue());
-		System.out.println("DEBUG c " + replacementNode.get().getLeft());
-		System.out.println("DEBUG d " + replacementNode.get().getRight().getValue());
-                System.out.println("DEBUG e " + replacementNode.get().getRight().getLeft().getValue());
-		System.out.println("DEBUG f " + replacementNode.get().getRight().getRight().getValue());
-
                 return replacementNode.get();
 	    }
 	} else if (valueComparison < 0) {
