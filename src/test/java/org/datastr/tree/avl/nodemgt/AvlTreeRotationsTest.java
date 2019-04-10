@@ -1,4 +1,7 @@
-package org.datastr.tree;
+package org.datastr.tree.avl.nodemgt;
+
+import org.datastr.tree.BSTreeTests;
+import org.datastr.tree.BinaryTreeNode;
 
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertNull;

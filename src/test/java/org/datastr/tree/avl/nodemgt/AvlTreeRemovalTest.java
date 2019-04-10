@@ -40,27 +40,6 @@ public class AvlTreeRemovalTest {
 	return root;
     }
     
-    /**
-     * Builds:
-     *
-     *           (4)
-     *        /---|---\
-     *      (2)       (6)
-     *   /---|---\   /-|-\
-     * (1)       (3)(5)  (7)
-     */
-    protected AvlTreeNode<Integer> build6ItemsInsertedInOrderAvlTree() {
-        AvlTreeNode<Integer> root = new AvlTreeNode<>(4);
-        root.setLeft(new AvlTreeNode<>(2));
-	root.getLeft().setLeft(new AvlTreeNode<>(1));
-	root.getLeft().setRight(new AvlTreeNode<>(3));
-        root.setRight(new AvlTreeNode<>(5));
-        root.getRight().setRight(new AvlTreeNode<>(6));
-
-        return root;
-    }
-
-
     @Test
     public void removeLeafTest() {
         AvlTreeNode<Integer> root = build5ItemsInsertedInOrderAvlTree();
