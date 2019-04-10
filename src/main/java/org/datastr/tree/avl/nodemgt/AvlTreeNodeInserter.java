@@ -26,8 +26,8 @@ class AvlTreeNodeInserter<V extends Comparable<V>>
     }
     
     /**
-     * Method above has some restrictions we don't want to
-     * have on every single recursion.
+     * This method reuses Binary Tree insertion base behavior, it balances nodes
+     * (and the Tree itself) and keeps their height up to date.
      */
     @Override
     protected <N extends BinaryTreeNode<V>> N recursiveInsert(
