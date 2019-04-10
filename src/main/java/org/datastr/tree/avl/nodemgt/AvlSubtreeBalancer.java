@@ -15,7 +15,11 @@ public class AvlSubtreeBalancer<V extends Comparable<V>> {
     private AvlNodeHeightCalculator<V> calculator = new AvlNodeHeightCalculator<>();
     
     public AvlTreeNode<V> balance(AvlTreeNode<V> ref, V value) {
-        AvlTreeNode<V> balancedRoot;
+        if (ref == null) {
+            return null;
+	}
+
+	AvlTreeNode<V> balancedRoot;
         
         AvlTreeNode<V> left = ref.getLeft();
         AvlTreeNode<V> right = ref.getRight();

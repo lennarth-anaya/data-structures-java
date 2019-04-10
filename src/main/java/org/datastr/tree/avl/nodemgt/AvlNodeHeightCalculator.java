@@ -4,7 +4,9 @@ import org.datastr.tree.avl.AvlTreeNode;
 
 public class AvlNodeHeightCalculator<V extends Comparable<V>> {
     public void updateHeight(AvlTreeNode<V> node) {
-        node.setHeight(calculateHeight(node));
+        if (node != null) {
+            node.setHeight(calculateHeight(node));
+	}
     }
     
     public long calculateHeight(AvlTreeNode<V> node) {
