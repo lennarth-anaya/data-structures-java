@@ -17,6 +17,7 @@ mkdir ../maven-repo
 
 ```
 sudo docker run \
+    --rm \
     -v "$PWD":/project -w /project \
     -v "$PWD/../maven-repo":/root/.m2 \
     openjdk ./mvnw clean install
@@ -30,6 +31,7 @@ Rather than having a standalone application showcasing how these data structures
 
 ```
 sudo docker run \
+    --rm \
     -v "$PWD":/project -w /project \
     -v "$PWD/../maven-repo":/root/.m2 \
     openjdk ./mvnw test
@@ -41,6 +43,7 @@ Pass the name or comma separated names of classes to test java env param. Exampl
 
 ```
 sudo docker run \
+    --rm \
     -v "$PWD":/project -w /project \
     -v "$PWD/../maven-repo":/root/.m2 \
     openjdk ./mvnw -Dtest=BSTreeTraversersTest,AvlTreeRotationsTest test
@@ -50,6 +53,7 @@ sudo docker run \
 ## Run an specific test method
 ```
 sudo docker run \
+    --rm \
     -v "$PWD":/project -w /project \
     -v "$PWD/../maven-repo":/root/.m2 \
     openjdk ./mvnw -Dtest=BSTreeTraversersTest#byLevelTraverse test
